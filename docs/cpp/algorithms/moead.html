@@ -34,7 +34,7 @@
     <link rel="shortcut icon" href="../../../_static/logo_favico.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Monotonic Basin Hopping (MBH) - Generalized" href="mbh.html" />
+    <link rel="next" title="Multi-objective Evolutionary Algorithm by Decomposition Generational (GMOEA/D-DE)" href="moead_gen.html" />
     <link rel="prev" title="Multi-objective Hypervolume-based Ant Colony Optimizer (MHACO)" href="maco.html" />
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto|Comfortaa|Space+Mono"> 
   </head>
@@ -243,6 +243,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Multi-objective Evolutionary Algorithm by Decomposition (MOEA/D-DE)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="moead_gen.html">
+     Multi-objective Evolutionary Algorithm by Decomposition Generational (GMOEA/D-DE)
     </a>
    </li>
    <li class="toctree-l2">
@@ -723,7 +728,7 @@ title="Print to PDF"
 <span id="_CPPv3N5pagmo5moeadE"></span><span id="_CPPv2N5pagmo5moeadE"></span><span id="pagmo::moead"></span><span class="target" id="classpagmo_1_1moead"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">moead</span></span></span><a class="headerlink" href="#_CPPv4N5pagmo5moeadE" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Multi Objective Evolutionary Algorithms by Decomposition (the DE variant) </p>
 <p><img alt="../../../_images/moead.png" src="../../../_images/moead.png" /></p>
-<p>MOEA/D-DE is a very successful multi-objective optimization algorithm, always worth a try. Based on the idea of problem decomposition, it leverages evolutionary operators to combine good solutions of neighbouring problems thus allowing for nice convergence properties. MOEA/D is, essentially, a framework and this particular algorithm implemented in pagmo with the name <a class="reference internal" href="moead_gen.html#classpagmo_1_1moead"><span class="std std-ref">pagmo::moead</span></a> uses the rand/2/exp Differential Evolution operator followed by a polynomial mutation to create offsprings, and the Tchebycheff, weighted or boundary intersection decomposition method. A diversity preservation mechanism, as proposed in the work from Li et al. referenced below, is also implemented.</p>
+<p>MOEA/D-DE is a very successful multi-objective optimization algorithm, always worth a try. Based on the idea of problem decomposition, it leverages evolutionary operators to combine good solutions of neighbouring problems thus allowing for nice convergence properties. MOEA/D is, essentially, a framework and this particular algorithm implemented in pagmo with the name <a class="reference internal" href="#classpagmo_1_1moead"><span class="std std-ref">pagmo::moead</span></a> uses the rand/2/exp Differential Evolution operator followed by a polynomial mutation to create offsprings, and the Tchebycheff, weighted or boundary intersection decomposition method. A diversity preservation mechanism, as proposed in the work from Li et al. referenced below, is also implemented.</p>
 <p><p><div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>Zhang, Qingfu, and Hui Li. “MOEA/D: A multiobjective evolutionary algorithm based on decomposition.”
@@ -827,7 +832,7 @@ non-dominated front.</p>
 <dt class="sig sig-object cpp" id="_CPPv4N5pagmo5moead13set_verbosityEj">
 <span id="_CPPv3N5pagmo5moead13set_verbosityEj"></span><span id="_CPPv2N5pagmo5moead13set_verbosityEj"></span><span id="pagmo::moead::set_verbosity__unsigned"></span><span class="target" id="classpagmo_1_1moead_1a889cc949b01652a802840a7ad95e8919"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set_verbosity</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">level</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5pagmo5moead13set_verbosityEj" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Sets the algorithm verbosity. </p>
-<p>Sets the verbosity level of the screen output and of the log returned by <a class="reference internal" href="moead_gen.html#classpagmo_1_1moead_1a538c789d18308cb9e46945cf2856673f"><span class="std std-ref">get_log()</span></a>. <code class="docutils literal notranslate"><span class="pre">level</span></code> can be:<ul class="simple">
+<p>Sets the verbosity level of the screen output and of the log returned by <a class="reference internal" href="#classpagmo_1_1moead_1a538c789d18308cb9e46945cf2856673f"><span class="std std-ref">get_log()</span></a>. <code class="docutils literal notranslate"><span class="pre">level</span></code> can be:<ul class="simple">
 <li><p>0: no verbosity</p></li>
 <li><p>&gt;0: will print and log one line each <code class="docutils literal notranslate"><span class="pre">level</span></code> generations.</p></li>
 </ul>
@@ -903,10 +908,10 @@ non-dominated front.</p>
 <dt class="sig sig-object cpp" id="_CPPv4NK5pagmo5moead7get_logEv">
 <span id="_CPPv3NK5pagmo5moead7get_logEv"></span><span id="_CPPv2NK5pagmo5moead7get_logEv"></span><span id="pagmo::moead::get_logC"></span><span class="target" id="classpagmo_1_1moead_1a538c789d18308cb9e46945cf2856673f"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N5pagmo5moead8log_typeE" title="pagmo::moead::log_type"><span class="n"><span class="pre">log_type</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">get_log</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK5pagmo5moead7get_logEv" title="Permalink to this definition">#</a><br /></dt>
 <dd><p>Get log. </p>
-<p>A log containing relevant quantities monitoring the last call to evolve. Each element of the returned <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> is a <a class="reference internal" href="moead_gen.html#classpagmo_1_1moead_1a6dfd520834ab0b7f28a03f0f31f08833"><span class="std std-ref">moead::log_line_type</span></a> containing: Gen, Fevals, ADR, ideal_point as described in <a class="reference internal" href="moead_gen.html#classpagmo_1_1moead_1a889cc949b01652a802840a7ad95e8919"><span class="std std-ref">moead::set_verbosity</span></a> </p>
+<p>A log containing relevant quantities monitoring the last call to evolve. Each element of the returned <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> is a <a class="reference internal" href="#classpagmo_1_1moead_1a6dfd520834ab0b7f28a03f0f31f08833"><span class="std std-ref">moead::log_line_type</span></a> containing: Gen, Fevals, ADR, ideal_point as described in <a class="reference internal" href="#classpagmo_1_1moead_1a889cc949b01652a802840a7ad95e8919"><span class="std std-ref">moead::set_verbosity</span></a> </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>an <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> of <a class="reference internal" href="moead_gen.html#classpagmo_1_1moead_1a6dfd520834ab0b7f28a03f0f31f08833"><span class="std std-ref">moead::log_line_type</span></a> containing the logged values Gen, Fevals, ADR, ideal_point </p>
+<dd class="field-odd"><p>an <code class="docutils literal notranslate"><span class="pre">std::vector</span></code> of <a class="reference internal" href="#classpagmo_1_1moead_1a6dfd520834ab0b7f28a03f0f31f08833"><span class="std std-ref">moead::log_line_type</span></a> containing the logged values Gen, Fevals, ADR, ideal_point </p>
 </dd>
 </dl>
 </dd></dl>
@@ -931,10 +936,10 @@ non-dominated front.</p>
             <p class="prev-next-title">Multi-objective Hypervolume-based Ant Colony Optimizer (MHACO)</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="mbh.html" title="next page">
+    <a class='right-next' id="next-link" href="moead_gen.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Monotonic Basin Hopping (MBH) - Generalized</p>
+        <p class="prev-next-title">Multi-objective Evolutionary Algorithm by Decomposition Generational (GMOEA/D-DE)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
